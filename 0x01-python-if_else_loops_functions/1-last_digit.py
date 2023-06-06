@@ -9,7 +9,7 @@ else:
     remainder = number % 10
 if remainder > 5:
     print("Last digit of {:d} is {:d} and is greater than 5"
-            .format(number, remainder))
+          .format(number, remainder))
 elif remainder < 6 and remainder != 0:
     print("Last digit of {:d} is {:d} and is less than 6 and not 0"
         .format(number, remainder))
