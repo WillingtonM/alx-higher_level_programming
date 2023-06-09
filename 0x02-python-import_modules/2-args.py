@@ -10,8 +10,8 @@ if __name__ == "__main__":
         print("{:d} argument:".format(arg_num))
     else:
         print("{:d} arguments.".format(arg_num))
-    
-    i = 1
-    while i <= arg_num:
-            print("{}: {}".format(i, sys.argv[i]))
-            i += 1
+
+        i = 1
+        while i <= arg_num:
+                print("{}: {}".format(i, sys.argv[i]))
+                i += 1
