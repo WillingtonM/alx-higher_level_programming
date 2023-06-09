@@ -8,6 +8,7 @@ if __name__ == "__main__":
         print("{:d} argument.".format(arg_len))
     elif arg_len == 1:
         print("{:d} argument:".format(arg_len))
+        print('1: {}'.format(sys.argv[1]))
     else:
         print("{:d} arguments:".format(arg_len))
     for index in range(arg_len):
