@@ -4,10 +4,11 @@ if __name__ == "__main__":
     import sys
 
     arg_len = len(sys.argv) - 1
+    
     if arg_len == 0:
-        print("0 arguments.")
+        print("{:d} argument.".format(arg_len))
     elif arg_len == 1:
-        print("1 argument:")
+        print("{:d} argument:".format(arg_len))
     else:
         print("{} arguments:".format(arg_len))
     for index in range(arg_len):
