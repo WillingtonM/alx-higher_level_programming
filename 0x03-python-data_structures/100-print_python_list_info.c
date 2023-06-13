@@ -1,19 +1,44 @@
 #include <Python.h>
-#include <object.h>
-#include <listobject.h>
+#include <stdio.h>
+
+void print_python_list_info(PyObject *p);
+void print_item_info(PyObject *prmItem, int prmitem_index);
 
 /**
- * print_python_list_info - Prints basic info about Python lists.
- * @p: PyObject list.
+ * print_python_list_info - prints informations about Python Lists
+ * @p: Python object
  */
 void print_python_list_info(PyObject *p)
 {
-    long int p_size = PyList_p_size(p);
-    int indx;
-    PyListObject *obj = (PyListObject *)p;
+    int item_index;
+    int obj_allocated_nb = 0;
+    PyObject *item;
+    Py_ssize_t obj_list_size = 0;
 
-    printf("[*] p_size of the Python List = %li\n", p_size);
-    printf("[*] Allocated = %li\n", obj->allocated);
-    for (indx = 0; indx < p_size; indx++)
-        printf("Element %i: %s\n", indx, Py_TYPE(obj->ob_item[indx])->tp_name);
+    if (PyList_Check(p))
+    {
+        obj_list_size = PyList_Size(p);
+        obj_allocated_nb = ((PyListObject *)p)->allocated;
+
+        printf("[*] Size of the Python List = %d\n", (int)obj_list_size);
+        printf("[*] Allocated = %d\n", obj_allocated_nb);
+
+        for (item_index = 0; item_index < obj_list_size; item_index++)
+        {
+            item = PyList_GetItem(p, item_index);
+            print_item_info(item, item_index);
+        }
+    }
+}
+
+/**
+ * print_item_info - prints information of items of a python list
+ * @prmItem: item of python object
+ * @prmitem_index: item index
+ */
+void print_item_info(PyObject *prmItem, int prmitem_index)
+{
+    char *item_name;
+    item_name = (char *)Py_TYPE(prmItem)->tp_name;
+    printf("Element %d: %s\n", prmitem_index, item_name);
 }
