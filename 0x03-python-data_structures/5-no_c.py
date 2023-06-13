@@ -2,6 +2,6 @@
 def no_c(my_string):
     new_str = ""
     for item in my_string:
-        if item is not 'c' and item is not 'C':
+        if item not in ('c', 'C'):
             new_str += item
     return (new_str)
