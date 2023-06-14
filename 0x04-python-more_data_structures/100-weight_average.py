@@ -1,10 +1,7 @@
 #!/usr/bin/python3
 def weight_average(my_list=[]):
-    if not my_list:
-        return 0
-    avrg = 0
-    div = 0
-    for tup in my_list:
-        avrg += tup[0] * tup[1]
-        div += tup[1]
-    return float(avrg / div)
+    if my_list and len(my_list):
+        avr = sum(list(map(lambda x: x[0]*x[1], my_list)))
+        sze = sum(list(map(lambda x: x[1], my_list)))
+        return (avg/size)
+    return 0
