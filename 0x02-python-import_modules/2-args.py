@@ -10,5 +10,6 @@ if __name__ == "__main__":
             print("1:", sys.argv[1])
         else:
             print(arg_len, "arguments:")
-            for i in range(1, arg_len + 1):
-                print("{}: {}".format(i, sys.argv[i]))
+
+        for index in range(1, arg_len + 1):
+                print("{}: {}".format(index, sys.argv[index]))
