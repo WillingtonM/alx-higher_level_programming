@@ -40,11 +40,9 @@ class Square:
     """ Define < comparision."""
     def __lt__(self, other):
         return self.area() < other.area()
-    
     """True if self is greater than other"""
     def __gt__(self, other):
         return self.area() > other.area()
-    
     """Define <= comparision."""
     def __le__(self, other):
         return self.area() <= other.area()

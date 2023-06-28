@@ -49,7 +49,6 @@ class Square:
         if self.__size == 0:
             print("")
             return
-        
         [print("") for i_ind in range(0, self.__position[1])]
 
         for i_ind in range(0, self.__size):
