@@ -45,40 +45,32 @@ def get_sol(chs_board):
 def x_out(chs_board, row, column):
     """X out spots on a chessboard.
     """
-    
     for c in range(column + 1, len(chs_board)):
         chs_board[row][c] = "x"
-    
     for c in range(column - 1, -1, -1):
         chs_board[row][c] = "x"
-    
     for r in range(row + 1, len(chs_board)):
         chs_board[r][column] = "x"
-    
     for r in range(row - 1, -1, -1):
         chs_board[r][column] = "x"
-
     c = column + 1
     for r in range(row + 1, len(chs_board)):
         if c >= len(chs_board):
             break
         chs_board[r][c] = "x"
         c += 1
-    
     c = column - 1
     for r in range(row - 1, -1, -1):
         if c < 0:
             break
         chs_board[r][c]
         c -= 1
-    
     c = column + 1
     for r in range(row - 1, -1, -1):
         if c >= len(chs_board):
             break
         chs_board[r][c] = "x"
         c += 1
-    
     c = column - 1
     for r in range(row + 1, len(chs_board)):
         if c < 0:
