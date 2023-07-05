@@ -2,27 +2,26 @@
 """Defines Rectangle class."""
 
 class Rectangle:
-    """Represent rectangle.
+    """Represent a rectangle.
 
     Attributes:
         numb_of_instances (int): Number of Rectangle instances.
     """
-
     numb_of_instances = 0
 
     def __init__(self, width=0, height=0):
-        """Initialize new Rectangle.
+        """Initialize a new Rectangle.
         Args:
-            height (int): Height of the new rectangle.
-            width (int): Width of the new rectangle.
+            width (int): Width of new rectangle.
+            height (int): Height of new rectangle.
         """
         type(self).numb_of_instances += 1
-        self.height = height
         self.width = width
+        self.height = height
 
     @property
     def width(self):
-        """Get or set width of the Rectangle."""
+        """Get or set the width of the Rectangle."""
         return self.__width
 
     @width.setter
@@ -48,18 +47,18 @@ class Rectangle:
 
     def area(self):
         """Return area of Rectangle."""
-        return ( self.__height * self.__width)
+        return (self.__width * self.__height)
 
     def perimeter(self):
         """Return perimeter of Rectangle."""
-        if self.__height == 0 or self.__width == 0:
+        if self.__width == 0 or self.__height == 0:
             return (0)
-        return ((self.__height * 2) + (self.__width * 2))
+        return ((self.__height * 2) * (self.__width * 2) )
 
     def __str__(self):
         """Return printable representation of Rectangle.
         """
-        if self.__height == 0 or self.__width == 0:
+        if self.__width == 0 or self.__height == 0:
             return ("")
 
         rect_list = []
@@ -76,6 +75,6 @@ class Rectangle:
         return (rect_list)
 
     def __del__(self):
-        """prints message for object that is deleted"""
+        """Print message for every deletion of Rectangle."""
         type(self).numb_of_instances -= 1
         print("Bye rectangle...")
