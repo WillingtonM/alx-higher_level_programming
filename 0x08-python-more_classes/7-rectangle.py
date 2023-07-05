@@ -3,7 +3,14 @@
 
 
 class Rectangle:
-    """this represents a rectangle"""
+    """Defines implementation of rectangle
+
+    Attributes:
+        number_of_instances (int): Number of Rectangle instances.
+        print_symbol (any): Symbol used for string representation.
+    """
+
+    print_symbol = "#"
     number_of_instances = 0
 
     def __init__(self, width=0, height=0):
@@ -53,14 +60,12 @@ class Rectangle:
         return ( (self.__height * 2) + (self.__width * 2))
 
     def __str__(self):
-        """Return printable representation of Rectangle.
-        """
-        if self.__height == 0 or self.__width == 0:
+        """Returns rectangle with the # character."""
+        if self.__width == 0 or self.__height == 0:
             return ("")
-
         rect_list = []
         for x in range(self.__height):
-            [rect_list.append('#') for y in range(self.__width)]
+            [rect_list.append(str(self.print_symbol)) for j in range(self.__width)]
             if x != self.__height - 1:
                 rect_list.append("\n")
         return ("".join(rect_list))
