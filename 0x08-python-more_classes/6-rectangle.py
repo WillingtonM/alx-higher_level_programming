@@ -1,25 +1,24 @@
 #!/usr/bin/python3
 """Defines Rectangle class."""
 
-
 class Rectangle:
-    """Represent a rectangle.
+    """Represent rectangle.
 
     Attributes:
-        numb_of_instances (int): The number of Rectangle instances.
+        numb_of_instances (int): Number of Rectangle instances.
     """
 
     numb_of_instances = 0
 
     def __init__(self, width=0, height=0):
-        """Initialize a new Rectangle.
+        """Initialize new Rectangle.
         Args:
-            width: Width of the new rectangle.
-            height: Height of the new rectangle.
+            height (int): Height of the new rectangle.
+            width (int): Width of the new rectangle.
         """
         type(self).numb_of_instances += 1
-        self.width = width
         self.height = height
+        self.width = width
 
     @property
     def width(self):
@@ -55,7 +54,7 @@ class Rectangle:
         """Return perimeter of Rectangle."""
         if self.__height == 0 or self.__width == 0:
             return (0)
-        return ( (self.__height * 2) + (self.__width * 2))
+        return ((self.__height * 2) + (self.__width * 2))
 
     def __str__(self):
         """Return printable representation of Rectangle.
@@ -77,6 +76,6 @@ class Rectangle:
         return (rect_list)
 
     def __del__(self):
-        """Print message for deletion of Rectangle."""
+        """prints message for object that is deleted"""
         type(self).numb_of_instances -= 1
         print("Bye rectangle...")
