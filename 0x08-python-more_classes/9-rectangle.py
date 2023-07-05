@@ -90,7 +90,6 @@ class Rectangle:
         Args:
             rect_1 (Rectangle): First rectangle
             rect_2 (Rectangle): Fecond rectangle
-
         """
         if not isinstance(rect_1, Rectangle):
             raise TypeError("rect_1 must be an instance of Rectangle")
@@ -100,13 +99,3 @@ class Rectangle:
             return (rect_1)
         return (rect_2)
 
-    @classmethod
-    def square(cls, size=0):
-        """Returns a new Rectangle instance with
-        width == height == size
-
-        Args:
-            size (int): The width and height of the new Rectangle.
-
-        """
-        return (cls(size, size))
