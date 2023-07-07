@@ -20,18 +20,18 @@ def matrix_divided(matrix, div):
     Returns:
         New list without mutatng original list
     """
-    err_1 = "matrix must be a matrix (list of lists)\of integers/floats"
+    err_1 = "matrix must be a matrix (list of lists) of integers/floats"
     err_2 = "Each row of the matrix must have the same size"
-    if (not isinstance(matrix, list) or matrix == []
-        or not all(isinstance(numb, list) for numb in matrix)
-        or not all((isinstance(element, int))
-                   or (isinstance(element, float))
-                   for element in [i for j in matrix for i in j])):
+
+    if(not isinstance(matrix,list) or not len(matrix) or
+       0 in [len(listx) if type(listx) is list else 0 for listx in matrix] or
+       any(False in i for i in  [[isinstance(elemnt,(int,float)) for elemnt in row]
+       for row in matrix])):
         raise TypeError(err_1)
-    if not (all( len(matrix[0]) == len(y) for y in matrix)):
+    if(len(set([len(listx) for listx in matrix])) > 1):
         raise TypeError(err_2)
-    if not ( (isinstance(div, float)) or (isinstance(div, int))):
-        raise TypeError("div must be a number")
-    if div == 0:
+    if(not isinstance(div,(int,float))):
+        raise TypeError('div must be a number')
+    if(div is 0):
         raise ZeroDivisionError('division by zero')
-    return ([list(map((lambda z: round(z / div, 2)), row)) for row in matrix])
+    return [[round(elemnt / div, 2) for elemnt in row] for row in matrix]
