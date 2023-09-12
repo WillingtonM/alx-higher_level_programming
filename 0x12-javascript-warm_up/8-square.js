@@ -1,14 +1,12 @@
 #!/usr/bin/node
-const arg_count = process.argv[2];
-
-if (arg_count === undefined || isNaN(arg_count)) { 
+if (process.argv[2] === undefined || isNaN(process.argv[2])) { 
   console.log('Missing size');
 } else {
-  for (let x = 0; x < arg_count; x++) {
+  for (let x = 0; x < process.argv[2]; x++) {
     let y = 0;
     let msg = '';
 
-    while (y < arg_count) {
+    while (y < process.argv[2]) {
       msg = msg + 'X';
       y++;
     }

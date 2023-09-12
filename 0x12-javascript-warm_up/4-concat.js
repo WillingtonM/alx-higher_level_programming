@@ -1,4 +1,2 @@
 #!/usr/bin/node
-
-const arg_count = process.argv;
-console.log(`${arg_count[2]} is ${arg_count[3]}`);
+console.log(`${process.argv[2]} is ${process.argv[3]}`);
