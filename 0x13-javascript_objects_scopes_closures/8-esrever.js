@@ -8,4 +8,3 @@ exports.esrever = function (list) {
 
   return (rlist);
 };
-

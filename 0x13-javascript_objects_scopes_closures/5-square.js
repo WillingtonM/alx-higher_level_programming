@@ -1,5 +1,4 @@
 #!/usr/bin/node
-
 /**
  * class Square that defines square and inherits from Rectangle
  */

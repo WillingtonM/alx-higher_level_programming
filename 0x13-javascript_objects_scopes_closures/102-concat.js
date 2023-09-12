@@ -1,5 +1,4 @@
 #!/usr/bin/node
-
 // Script concatenates file passd as arguments into output file.
 const args = process.argv.slice(2);
 const fs = require('fs');
