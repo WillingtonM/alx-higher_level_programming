@@ -1,4 +1,6 @@
 #!/usr/bin/node
-for (const arr_str of ['C is fun', 'Python is cool', 'JavaScript is amazing']) {
-  console.log(arr_str);
-}
+const my_var = ['C is fun', 'Python is cool', 'JavaScript is amazing'];
+
+my_var.forEach((elem) => {
+  console.log(elem);
+});
