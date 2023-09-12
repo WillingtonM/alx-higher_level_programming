@@ -1,7 +1,5 @@
 #!/usr/bin/node
-// Script concatenates file passd as arguments into output file.
 const fs = require('fs');
-const args = process.argv.slice(2);
-const data_first = fs.readFileSync('./' + args[0], 'utf-8');
-const data_second = fs.readFileSync('./' + args[1], 'utf-8');
-fs.writeFileSync('./' + args[2], data_first + data_second, 'utf-8');
+const data_a = fs.readFileSync(process.argv[2], 'utf8');
+const data_b = fs.readFileSync(process.argv[3], 'utf8');
+fs.writeFileSync(process.argv[4], data_a + data_b);
