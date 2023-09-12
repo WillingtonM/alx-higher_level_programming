@@ -2,7 +2,7 @@
 
 const arg_count = process.argv[2];
 
-if (!parseInt(arg_count)) {
+if (arg_count === undefined || isNaN(arg_count)) { 
   console.log('Missing size');
 } else {
   for (let x = 0; x < arg_count; x++) {
