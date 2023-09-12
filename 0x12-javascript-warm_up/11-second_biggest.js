@@ -1,14 +1,20 @@
 #!/usr/bin/node
 
-const args = process.argv;
+function second (my_array) {
+  if (my_array.length === 2 || my_array.length === 3) { return (0); }
 
-if (args.length <= 3) {
-  console.log(0);
-} else {
-  const args = args
-    .map(Number)
-    .slice(2, args.length)
-    .sort((a, b) => a - b);
-  console.log(args[args.length - 2]);
+  let max_val = my_array[2];
+  let sec_max = my_array[3];
+
+  for (let i = 2; i < my_array.length; i++) {
+    if (my_array[i] > max_val) {
+      sec_max = max_val;
+      max_val = my_array[i];
+    } else if (my_array[i] > sec_max && my_array[i] < max_val) {
+      sec_max = my_array[i];
+    }
+  }
+  return (sec_max);
 }
 
+console.log(second(process.argv));
