@@ -3,9 +3,12 @@
 const args = process.argv;
 
 if (args.length <= 3) {
-  console.log('0');
+  console.log(0);
 } else {
-  const arg_arr = args.slice(2).map(Number);
-  const sec_max = arg_arr.sort(function (x, y) { return y - x; })[1];
-  console.log(sec_max);
+  const args = args
+    .map(Number)
+    .slice(2, args.length)
+    .sort((a, b) => a - b);
+  console.log(args[args.length - 2]);
 }
+
