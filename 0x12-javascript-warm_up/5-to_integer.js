@@ -7,4 +7,3 @@ if (isNaN(parseInt(arg_count))) {
 } else {
   console.log('My number: ' + parseInt(arg_count));
 }
-
