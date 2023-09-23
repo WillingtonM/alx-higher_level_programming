@@ -3,9 +3,9 @@
 Defines classes for tables
 """
 
-import sqlalchemy
-from model_state import Base, State
 from sqlalchemy import Column, Integer, String, ForeignKey
+from model_state import Base, State
+import sqlalchemy
 
 
 class City(Base):

@@ -3,9 +3,9 @@
 class definition of State and an instance Base = declarative_base()
 """
 
-import sqlalchemy
 from sqlalchemy import Column, Integer, String, ForeignKey
 from relationship_state import Base, State
+import sqlalchemy
 
 
 class City(Base):
