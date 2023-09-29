@@ -1,11 +1,11 @@
 #!/usr/bin/python3
-""" a Python script that takes in a URL, sends a request to
-    the URL and displays the value of the variable X-Request-Id
-    in the response header
+""" script that takes in URL, sends a request to
+    URL and displays value of variable X-Request-Id
+    in response header
 """
-import requests
 import sys
+import requests
 
 if __name__ == "__main__":
-    r = requests.get(sys.argv[1])
-    print(r.headers.get("X-Request-Id"))
+    req_res = requests.get(sys.argv[1])
+    print(req_res.headers.get("X-Request-Id"))
