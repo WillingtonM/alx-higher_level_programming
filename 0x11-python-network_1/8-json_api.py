@@ -10,10 +10,10 @@ import requests
 
 if __name__ == "__main__":
     req_lett = "" if len(argv) == 1 else argv[1]
-    post_req = requests.post("http://0.0.0.0:5000/search_user", {"q": req_lett})
+    pst_req = requests.post("http://0.0.0.0:5000/search_user", {"q": req_lett})
 
     try:
-        post_resp = post_req.json()
+        post_resp = pst_req.json()
         if post_resp == {}:
             print("No result")
         else:
