@@ -9,7 +9,8 @@ import requests
 if __name__ == "__main__":
     req_repo = argv[1]
     owner = argv[2]
-    req_url = "https://api.github.com/repos/{}/{}/commits".format(owner, req_repo)
+    req_url = "https://api.github.com/repos/{}/{}/commits".format(
+        owner, req_repo)
 
     req_res = requests.get(req_url)
     commits = req_res.json()
