@@ -1,20 +1,20 @@
 #!/usr/bin/python3
-""" a Python script that takes in a letter and sends a
+""" script that takes in a letter & sends
     POST request to http://0.0.0.0:5000/search_user with
-    the letter as a parameter.
+    letter as parameter.
 """
 import requests
 import sys
 
 if __name__ == "__main__":
-    val = ""
+    req_val = ""
     if len(sys.argv) > 1:
-        val = sys.argv[2]
-    r = requests.post("http://0.0.0.0:5000/search_user", data={"q": val})
+        req_val = sys.argv[2]
+    req_res = requests.post("http://0.0.0.0:5000/search_user", data={"q": req_val})
     try:
-        r = r.json()
+        req_res = req_res.json()
         if len(r):
-            print("[{}] {}".format(r.get("id"), r.get("name")))
+            print("[{}] {}".format(req_res.get("id"), req_res.get("name")))
         else:
             print("No result")
     except ValueError:

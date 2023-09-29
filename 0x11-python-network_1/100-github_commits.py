@@ -1,22 +1,21 @@
 #!/usr/bin/python3
-""" Lists 10 commits from the most recent to oldest of the
-    repository "rails" by the user "rails"
-    Usage:
-            ./100-github_commits.py <repo name> <owner>
+""" Lists 10 commits from most recent to oldest of
+    repository "rails" by user "rails"
+    Usage: ./100-github_commits.py <repo name> <owner>
 """
-import requests
 from sys import argv
+import requests
 
 if __name__ == "__main__":
-    repo = argv[1]
+    req_repo = argv[1]
     owner = argv[2]
-    url = "https://api.github.com/repos/{}/{}/commits".format(owner, repo)
+    req_url = "https://api.github.com/repos/{}/{}/commits".format(owner, req_repo)
 
-    r = requests.get(url)
-    commits = r.json()
+    req_res = requests.get(req_url)
+    commits = req_res.json()
     try:
-        for i in range(10):
-            print("{}: {}".format(commits[i].get("sha"),
-                  commits[i].get("commit").get("author").get("name")))
+        for x in range(10):
+            print("{}: {}".format(commits[x].get("sha"),
+                  commits[x].get("commit").get("author").get("name")))
     except IndexError:
         pass
