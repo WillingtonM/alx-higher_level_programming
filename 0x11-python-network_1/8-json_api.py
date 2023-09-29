@@ -4,20 +4,19 @@
     letter as parameter.
 """
 
+from sys import argv
 import requests
-import sys
+
 
 if __name__ == "__main__":
-    req_val = ""
-    if len(sys.argv) > 1:
-        req_val = sys.argv[2]
-    req_res = requests.post("http://0.0.0.0:5000/search_user",
-                            data={"q": req_val})
+    req_lett = "" if len(argv) == 1 else argv[1]
+    post_req = requests.post("http://0.0.0.0:5000/search_user", {"q": req_lett})
+
     try:
-        req_res = req_res.json()
-        if len(req_res):
-            print("[{}] {}".format(req_res.get("id"), req_res.get("name")))
-        else:
+        post_resp = post_req.json()
+        if post_resp == {}:
             print("No result")
+        else:
+            print("[{}] {}".format(post_resp.get("id"), post_resp.get("name")))
     except ValueError:
         print("Not a valid JSON")
