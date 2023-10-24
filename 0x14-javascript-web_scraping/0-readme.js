@@ -4,10 +4,6 @@
 const file_name = process.argv[2];
 const file_s = require('fs');
 
-file_s.readfile_name(file_name, 'utf8', (err, dat) => {
-  if (err) {
-    console.log(err);
-  } else {
-    console.log(dat);
-  }
+file_s.readFile(file_name, 'utf8', function (error, content) {
+  console.log(error || content);
 });
