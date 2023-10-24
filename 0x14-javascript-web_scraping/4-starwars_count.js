@@ -3,7 +3,7 @@
 
 const request = require('request');
 const url = process.argv[2];
-const char_id = '18';
+const charId = '18';
 let count = 0;
 
 request.get(url, (err, resp, body) => {
@@ -13,7 +13,7 @@ request.get(url, (err, resp, body) => {
     const data = JSON.parse(body);
     data.results.forEach((film) => {
       film.characters.forEach((character) => {
-        if (character.includes(char_id)) {
+        if (character.includes(charId)) {
           count += 1;
         }
       });

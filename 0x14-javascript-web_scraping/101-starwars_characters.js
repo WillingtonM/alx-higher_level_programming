@@ -3,8 +3,8 @@
 
 const request = require('request');
 
-const movie_id = process.argv[2];
-const url = `https://swapi.dev/api/films/${movie_id}/`;
+const movieId = process.argv[2];
+const url = `https://swapi.dev/api/films/${movieId}/`;
 let chars = [];
 
 request(url, (err, resp, body) => {
