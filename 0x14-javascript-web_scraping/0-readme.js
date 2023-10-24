@@ -1,9 +1,9 @@
 #!/usr/bin/node
-// Script that reads & prints content of file_name
+// Script that reads & prints content of fileName
 
-const file_name = process.argv[2];
-const file_s = require('fs');
+const fileName = process.argv[2];
+const fs = require('fs');
 
-file_s.readFile(file_name, 'utf8', function (err, content) {
+fs.readFile(fileName, 'utf8', function (err, content) {
   console.log(err || content);
 });
