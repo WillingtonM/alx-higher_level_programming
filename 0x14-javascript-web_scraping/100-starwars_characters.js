@@ -11,7 +11,7 @@ request.get(url + movieId, function (err, resp, body) {
   const data = JSON.parse(body);
   const char = data.characters;
   for (const c of char) {
-    req.get(c, function (err, resp, body1) {
+    request.get(c, function (err, resp, body1) {
       if (err) {
         console.log(err);
       }
