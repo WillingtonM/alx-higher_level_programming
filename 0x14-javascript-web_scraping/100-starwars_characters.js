@@ -12,16 +12,16 @@ request.get(url, (err, resp, body) => {
     return;
   }
 
-  const js_data = JSON.parse(body);
-  const chars = js_data.characters;
+  const jsData = JSON.parse(body);
+  const chars = jsData.characters;
   for (const character of chars) {
     request(character, (err, resp, body) => {
       if (err) {
         console.log(err);
         return;
       }
-      const char_data = JSON.parse(body);
-      console.log(char_data.name);
+      const charData = JSON.parse(body);
+      console.log(charData.name);
     });
   }
 });
